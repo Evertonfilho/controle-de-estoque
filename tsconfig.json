@@ -23,7 +23,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-  ],
+, "src/components/AdicionarProduto/index.tsx", "src/components/Dashboard/index.jsx", "src/pages/_app.tsx"  ],
   "exclude": [
     "node_modules"
   ]

@@ -9,6 +9,7 @@
   --white: #FFFFFF;
   --blue:#9FC2CC;
   --blue-table:#C2E7DA;
+  --red:#FF2F01;
 }
 
 @media (max-width: 1080px) {
@@ -27,13 +28,19 @@ body,input,textarea,select,button{
   font: 400 1rem 'roboto',sans-serif;
 }
 
-button{
+button[type="submit"]{
   cursor: pointer;
   font-family: 'Poppins',sans-serif;
   font-weight: bold;
   border-radius: 2rem;
   background: var(--blue);
   color: var(--background);
+  border: 1px solid var(--blue);
+}
+button{
+  cursor: pointer;
+  font-family: 'Poppins',sans-serif;
+  font-weight: bold;
 }
 
 input{
@@ -45,8 +52,8 @@ input{
   border-radius: 2rem;
   background: var(--blue);
   color: var(--background);
+  border: 1px solid var(--blue);
 }
-
 
 
 a{

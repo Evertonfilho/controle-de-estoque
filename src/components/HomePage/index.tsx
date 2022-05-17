@@ -1,6 +1,12 @@
-
+import { useState } from 'react'
+import Modal from 'react-modal'
 import styles from './styles.module.css'
-export function Header(){
+
+interface PropsNewProduct{
+  OpenNewProduct: () => void;
+}
+
+export function HomePage({OpenNewProduct}:PropsNewProduct){
   return(
     <>
     <header className= {styles.Navbar}>
@@ -13,61 +19,61 @@ export function Header(){
         <ul>
           <li>
             <a href="#">
-              <img src='/images/PaginaInicial.svg' />
+              <img src='/images/paginainicial.svg' />
               <span>Página Inicial</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src='/images/PaginaInicial.svg' />
+              <img src='/images/Financeiro.svg' />
               <span>Financeiro</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src='/images/PaginaInicial.svg' />
+              <img src='/images/Estoque.svg' />
               <span>Estoque</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src='/images/PaginaInicial.svg' />
+              <img src='/images/Fiscal.svg' />
               <span>Fiscal</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src='/assets/PaginaInicial.svg' />
+              <img src='/images/Vendas.svg' />
               <span>Vendas</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src='/assets/PaginaInicial.svg' />
+              <img src='/images/Contatos.svg' />
               <span>Contatos</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src='/assets/PaginaInicial.svg' />
+              <img src='/images/Relatorio.svg' />
               <span>Relatório</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src='/assets/PaginaInicial.svg' />
+              <img src='/images/Locais.svg' />
               <span>Locais</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src='/assets/PaginaInicial.svg' />
+              <img src='/images/Assinatura.svg' />
               <span>Assinatura</span>
             </a>
           </li>
           <li>
             <a href="#">
-              <img src='/assets/PaginaInicial.svg' />
+              <img src='/images/Suporte.svg' />
               <span>Suporte</span>
             </a>
           </li>
@@ -86,7 +92,7 @@ export function Header(){
         </div>
         <div className={styles.Box3}>
             <header>
-              <p>Movimentação diária</p>
+              <p>Movimentação financeira diária</p>
             </header>
             <strong>
             R$ 567
@@ -105,8 +111,17 @@ export function Header(){
         type="text" 
         placeholder="Pesquisar"
         />
-        <button>Pesquisar Produto</button>
-        <button>Adicionar Venda</button>
+        <button
+        type="submit"
+        >
+          Pesquisar Produto
+        </button>
+        <button
+        type="submit"
+        onClick={OpenNewProduct}
+        >
+          Adicionar Venda
+        </button>
         <div className={styles.Table}>
           <table>
             <thead>
@@ -131,8 +146,17 @@ export function Header(){
                 <td>05/12/21 as 16:44</td>
                 <td>39 un</td>
                 <td>
-                  <button>editar</button>
-                  <button className={styles.BtnDelete}>excluir</button>
+                <button
+                  type="submit"
+                  >
+                    editar
+                  </button>
+                  <button 
+                  type="button"
+                  className={styles.BtnDelete}
+                  >
+                    excluir
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -146,8 +170,17 @@ export function Header(){
                 <td>05/12/21 as 16:44</td>
                 <td>39 un</td>
                 <td>
-                  <button>editar</button>
-                  <button className={styles.BtnDelete}>excluir</button>
+                <button
+                  type="submit"
+                  >
+                    editar
+                  </button>
+                  <button 
+                  type="button"
+                  className={styles.BtnDelete}
+                  >
+                    excluir
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -161,8 +194,65 @@ export function Header(){
                 <td>05/12/21 as 16:44</td>
                 <td>39 un</td>
                 <td>
-                  <button>editar</button>
-                  <button className={styles.BtnDelete}>excluir</button>
+                  <button
+                  type="submit"
+                  >
+                    editar
+                  </button>
+                  <button 
+                  type="button"
+                  className={styles.BtnDelete}
+                  >
+                    excluir
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tbody >
+              <tr>
+                <td>654891</td>
+                <td>Carregador</td>
+                <td>Venda</td>
+                <td>R$ 18 / R$ 29</td>
+                <td>14.0 un</td>
+                <td>05/12/21 as 16:44</td>
+                <td>39 un</td>
+                <td>
+                  <button
+                  type="submit"
+                  >
+                    editar
+                  </button>
+                  <button 
+                  type="button"
+                  className={styles.BtnDelete}
+                  >
+                    excluir
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+            <tbody >
+              <tr>
+                <td>654891</td>
+                <td>Carregador</td>
+                <td>Venda</td>
+                <td>R$ 18 / R$ 29</td>
+                <td>14.0 un</td>
+                <td>05/12/21 as 16:44</td>
+                <td>39 un</td>
+                <td>
+                  <button
+                  type="submit"
+                  >
+                    editar
+                  </button>
+                  <button 
+                  type="button"
+                  className={styles.BtnDelete}
+                  >
+                    excluir
+                  </button>
                 </td>
               </tr>
             </tbody>

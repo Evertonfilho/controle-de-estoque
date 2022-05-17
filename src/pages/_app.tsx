@@ -1,12 +1,16 @@
-import {AppProps} from 'next/app'
-import { Header } from '../components/PaginaInicial'
+import { AppProps } from 'next/app'
+import { Dashboard } from '../components/Dashboard'
 import '../styles/global.css'
 
-function MyApp({ Component, pageProps }:AppProps) {
+
+function MyApp({ Component, pageProps }: AppProps) {
+
+
+
   return (
     <>
-    <Header/>
-    <Component {...pageProps} />
+      <Dashboard/>
+      <Component {...pageProps} />
     </>
   )
 }
