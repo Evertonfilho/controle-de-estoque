@@ -1,26 +1,22 @@
-import { NewSale } from "../NewSale";
-import {HomePage} from "../HomePage";
-import { useState } from "react";
+import { useState } from 'react'
 
-export function Dashboard(){
+import { HomePage } from '../HomePage'
+import { NewSale } from '../NewSale'
 
-    const [newProductModalOpen, setNewProductModalOpen] = useState(false)
+export function Dashboard() {
+  const [newProductModalOpen, setNewProductModalOpen] = useState(false)
 
-    function handleOpenNewProductModal() {
-      setNewProductModalOpen(true)
-    }
-    function handleCloseNewProductModal() {
-      setNewProductModalOpen(false)
-    }
-  
+  function handleOpenNewProductModal() {
+    setNewProductModalOpen(true)
+  }
+  function handleCloseNewProductModal() {
+    setNewProductModalOpen(false)
+  }
 
-    return(
-        <>
-        <HomePage OpenNewProduct={handleOpenNewProductModal}/>
-        <NewSale
-            isOpen={newProductModalOpen}  
-            onRequestClose={handleCloseNewProductModal}
-        />
-        </>
-    )
+  return (
+    <>
+      <HomePage OpenNewProduct={handleOpenNewProductModal} />
+      <NewSale isOpen={newProductModalOpen} onRequestClose={handleCloseNewProductModal} />
+    </>
+  )
 }
