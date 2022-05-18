@@ -2,11 +2,12 @@ import CircularProgress from '@mui/material/CircularProgress'
 import { NextPage } from 'next'
 import { useCallback, useEffect, useState } from 'react'
 
-import { findProducts } from '../../services/requester/products'
+import type { ProductDto } from '~/serverSide/products/product.dto'
+import { findProducts } from '~/services/requester/products'
 
 const PageFind: NextPage = () => {
   const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<any>([])
+  const [data, setData] = useState<ProductDto[]>([])
 
   const fetchData = useCallback(async () => {
     setLoading(true)
