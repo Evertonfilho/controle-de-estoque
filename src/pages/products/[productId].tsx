@@ -1,8 +1,15 @@
-import { NextPage } from 'next'
+import { GetServerSideProps, NextPage } from 'next'
 import { useRouter } from 'next/router'
 
-const PageProduct: NextPage = () => {
-  const { query, push } = useRouter()
+import { testeBack } from '~/serverSide/products/product.controller'
+import type { ProductDto } from '~/serverSide/products/product.dto'
+
+type PageProductProps = {
+  product?: ProductDto
+}
+
+const PageProduct: NextPage<PageProductProps> = ({ product }) => {
+  const { push } = useRouter()
 
   const onClickBack = () => {
     push('/products')
@@ -10,10 +17,19 @@ const PageProduct: NextPage = () => {
 
   return (
     <>
-      <h1>Produto ID: {query.productId}</h1>
+      <h1>Produto ID:</h1>
+      <p>nome: {product?.name}</p>
+      <p>preço: {product?.price}</p>
       <button onClick={onClickBack}>VOLTAR</button>
     </>
   )
 }
 
 export default PageProduct
+
+export const getServerSideProps: GetServerSideProps<PageProductProps> = async context => {
+  const product = testeBack(+context.query?.productId)
+  return {
+    props: { product }
+  }
+}

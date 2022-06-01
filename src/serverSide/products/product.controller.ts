@@ -34,3 +34,8 @@ export async function create(req: NextApiRequest, res: NextApiResponse<ResponseA
   // await wait(5000)
   return res.status(200).json({ success: true })
 }
+
+export function testeBack(productId: number) {
+  const product = data.find(f => f.id === productId)
+  return product
+}
