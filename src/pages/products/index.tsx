@@ -1,5 +1,6 @@
 import CircularProgress from '@mui/material/CircularProgress'
 import { NextPage } from 'next'
+import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
 
 import type { ProductDto } from '~/serverSide/products/product.dto'
@@ -32,7 +33,9 @@ const PageFind: NextPage = () => {
           {data?.map(product => {
             return (
               <div key={`product-${product.id}`}>
-                <div>{product?.name}</div>
+                <div>
+                  <Link href={`/products/${product.id}`}>{product?.name}</Link>
+                </div>
               </div>
             )
           })}

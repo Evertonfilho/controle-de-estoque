@@ -19,6 +19,17 @@ export async function findAll(req: NextApiRequest, res: NextApiResponse<Response
   return res.status(200).json({ success: true, products })
 }
 
+export async function findOne(req: NextApiRequest, res: NextApiResponse<any>): Promise<void> {
+  const { query } = req
+  const productId = +query?.productId || 0
+  if (!productId) res.status(400).json({ success: false, message: 'id do produto invalido' })
+
+  const product = data.find(f => f.id === productId)
+  if (!product) res.status(404).json({ success: false, message: 'produto não encontrado' })
+
+  return res.status(200).json({ success: true, product })
+}
+
 export async function create(req: NextApiRequest, res: NextApiResponse<ResponseApi>): Promise<void> {
   // await wait(5000)
   return res.status(200).json({ success: true })

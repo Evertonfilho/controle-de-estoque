@@ -1,7 +1,12 @@
 import { Api } from '..'
 
 export async function findProducts(search: string): Promise<any> {
-  const response = await Api.get('/products/find', { params: { search } })
+  const response = await Api.get('/products', { params: { search } })
+  return response?.data
+}
+
+export async function getProduct(productId: number): Promise<any> {
+  const response = await Api.get(`/products/${productId}`)
   return response?.data
 }
 
