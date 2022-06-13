@@ -1,7 +1,9 @@
+/* eslint-disable import/no-unresolved */
 import CircularProgress from '@mui/material/CircularProgress'
 import { NextPage } from 'next'
 import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
+
 
 import type { ProductDto } from '~/serverSide/products/product.dto'
 import { findProducts } from '~/services/requester/products'
